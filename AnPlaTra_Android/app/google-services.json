@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "72495532255",
+    "firebase_url": "https://anplatra-default-rtdb.firebaseio.com",
+    "project_id": "anplatra",
+    "storage_bucket": "anplatra.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:72495532255:android:9382e3c85cbc981e77c16a",
+        "android_client_info": {
+          "package_name": "com.harishram.anplatra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "72495532255-b9vre8m91ps15kkd1ooc027lokma1lkl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSwd_wF0s9ay41RjIad1-qcKrpw0UJvxY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "72495532255-b9vre8m91ps15kkd1ooc027lokma1lkl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
