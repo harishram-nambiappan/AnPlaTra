@@ -15,7 +15,7 @@ mode = "car"
 #print(dest_address)
 #print(mode)
 
-weather_url = requests.get("http://api.openweathermap.org/data/2.5/weather?q="+source_address.split(",")[len(source_address.split(","))-2]+","+source_address.split(",")[len(source_address.split(","))-1]+"&units=metric&appid=635bb23855a8521381dc4206fffb6769")
+weather_url = requests.get("http://api.openweathermap.org/data/2.5/weather?q="+source_address.split(",")[len(source_address.split(","))-2]+","+source_address.split(",")[len(source_address.split(","))-1]+"&units=metric&appid=YOUR_API_KEY")
 weather_result = weather_url.json()
 weather_main = weather_result['weather'][0]['main']
 #print(weather_result['weather'][0]['main'])
@@ -52,18 +52,18 @@ for i in range(len(destination_split)):
 #print(source_query)
 
 #print(destination_query)
-geocoding_url1 = requests.get("https://geocoder.ls.hereapi.com/6.2/geocode.json?apiKey=G4OsVzhO0j-Xexu4K1VuZDyIahnDfgybAZfH05vinWA&searchtext="+source_query)
+geocoding_url1 = requests.get("https://geocoder.ls.hereapi.com/6.2/geocode.json?apiKey=YOUR_API_KEY&searchtext="+source_query)
 geocoding_result1 = geocoding_url1.json()
 geocoding_coord1 = geocoding_result1['Response']['View'][0]['Result'][0]['Location']['DisplayPosition']
 geocoding_bb1 = geocoding_result1['Response']['View'][0]['Result'][0]['Location']['MapView']
 #print(geocoding_result['Response']['View'][0]['Result'][0]['Location']['DisplayPosition'])
 
-geocoding_url2 = requests.get("https://geocoder.ls.hereapi.com/6.2/geocode.json?apiKey=G4OsVzhO0j-Xexu4K1VuZDyIahnDfgybAZfH05vinWA&searchtext="+destination_query)
+geocoding_url2 = requests.get("https://geocoder.ls.hereapi.com/6.2/geocode.json?apiKey=YOUR_API_KEY&searchtext="+destination_query)
 geocoding_result2 = geocoding_url2.json()
 geocoding_coord2 = geocoding_result2['Response']['View'][0]['Result'][0]['Location']['DisplayPosition']
 geocoding_bb2 = geocoding_result2['Response']['View'][0]['Result'][0]['Location']['MapView']
 
-traffic_url1 = requests.get("https://traffic.ls.hereapi.com/traffic/6.2/flow.json?apiKey=G4OsVzhO0j-Xexu4K1VuZDyIahnDfgybAZfH05vinWA&bbox="+str(geocoding_bb1['TopLeft']['Latitude'])+","+str(geocoding_bb1['TopLeft']['Longitude'])+";"+str(geocoding_bb1['TopLeft']['Latitude'])+","+str(geocoding_bb1['TopLeft']['Longitude']))
+traffic_url1 = requests.get("https://traffic.ls.hereapi.com/traffic/6.2/flow.json?apiKey=YOUR_API_KEY&bbox="+str(geocoding_bb1['TopLeft']['Latitude'])+","+str(geocoding_bb1['TopLeft']['Longitude'])+";"+str(geocoding_bb1['TopLeft']['Latitude'])+","+str(geocoding_bb1['TopLeft']['Longitude']))
 traffic_info1 = traffic_url1.json()
 total_jf = 0
 jf_cnt = 0
@@ -86,7 +86,7 @@ print("total_jf "+total_jf)
 print("jf_cnt "+jf_cnt)
 '''
 
-routing_url = requests.get("https://route.ls.hereapi.com/routing/7.2/calculateroute.json?apiKey=G4OsVzhO0j-Xexu4K1VuZDyIahnDfgybAZfH05vinWA&waypoint0=geo!"+str(geocoding_coord1['Latitude'])+","+str(geocoding_coord1['Longitude'])+"&waypoint1=geo!"+str(geocoding_coord2['Latitude'])+","+str(geocoding_coord2['Longitude'])+"&mode=fastest;"+mode+";traffic:enabled")
+routing_url = requests.get("https://route.ls.hereapi.com/routing/7.2/calculateroute.json?apiKey=YOUR_API_KEY&waypoint0=geo!"+str(geocoding_coord1['Latitude'])+","+str(geocoding_coord1['Longitude'])+"&waypoint1=geo!"+str(geocoding_coord2['Latitude'])+","+str(geocoding_coord2['Longitude'])+"&mode=fastest;"+mode+";traffic:enabled")
 routing_result = routing_url.json()
 routing_summary = routing_result['response']['route'][0]['summary']
 #print(routing_summary)
